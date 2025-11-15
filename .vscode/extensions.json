@@ -1,0 +1,27 @@
+{
+  "recommendations": [
+    // Essential
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "bradlc.vscode-tailwindcss",
+
+    // TypeScript
+    "ms-vscode.vscode-typescript-next",
+
+    // React/Next.js
+    "dsznajder.es7-react-js-snippets",
+
+    // Utilities
+    "christian-kohler.path-intellisense",
+    "zignd.html-css-class-completion",
+    "formulahendry.auto-rename-tag",
+    "streetsidesoftware.code-spell-checker",
+
+    // Git
+    "eamodio.gitlens",
+
+    // Optional but helpful
+    "gruntfuggly.todo-tree",
+    "usernamehw.errorlens"
+  ]
+}
