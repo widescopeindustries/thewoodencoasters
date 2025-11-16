@@ -6,7 +6,11 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "pursuit": "./scripts/run-pursuit-agents.sh",
+    "pursuit:quality": "node scripts/quality-guardian-agent.js",
+    "pursuit:test": "node scripts/test-enforcer-agent.js",
+    "pursuit:perf": "node scripts/perf-a11y-agent.js"
   },
   "dependencies": {
     "@headlessui/react": "^2.2.9",
