@@ -4,48 +4,47 @@ export default function Footer() {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-black text-gray-300 mt-16 border-t-2 border-amber-800">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
+    <footer className="bg-[var(--color-primary-dark)] text-[var(--color-neutral-200)] border-t border-[var(--color-primary)]">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
           {/* About */}
           <div>
-            <h3 className="text-white font-bold mb-4 flex items-center gap-2">
-              <span className="text-2xl">🪵</span>
+            <h3 className="text-white font-serif font-medium text-xl mb-5 tracking-tight">
               The Wooden Coasters
             </h3>
-            <p className="text-sm">
-              Handcrafted wooden drink coasters made from premium sustainable wood.
-              Perfect for protecting your furniture in style.
+            <p className="text-sm font-sans font-light leading-relaxed opacity-90">
+              Artisan-crafted wooden drink coasters made from sustainably sourced hardwood.
+              Timeless design meets functional elegance.
             </p>
           </div>
 
           {/* Shop */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Shop</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-white font-sans font-medium text-sm mb-5 tracking-wider uppercase">Collection</h4>
+            <ul className="space-y-3 text-sm font-sans font-light">
               <li>
-                <Link href="/products" className="hover:text-amber-300 transition-colors">
-                  All Products
+                <Link href="/products" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  View All
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=round" className="hover:text-amber-300 transition-colors">
-                  Round Coasters
+                <Link href="/products?category=round" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Round
                 </Link>
               </li>
               <li>
-                <Link href="/products?category=square" className="hover:text-amber-300 transition-colors">
-                  Square Coasters
+                <Link href="/products?category=square" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Square
                 </Link>
               </li>
               <li>
-                <Link href="/products?filter=custom" className="hover:text-amber-300 transition-colors">
-                  Custom Engraved
+                <Link href="/products?filter=custom" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Bespoke Engraving
                 </Link>
               </li>
               <li>
-                <Link href="/products?filter=bulk" className="hover:text-amber-300 transition-colors">
-                  Bulk Orders
+                <Link href="/products?filter=bulk" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Trade Orders
                 </Link>
               </li>
             </ul>
@@ -53,26 +52,26 @@ export default function Footer() {
 
           {/* Customer Service */}
           <div>
-            <h4 className="text-white font-semibold mb-4">Customer Service</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-white font-sans font-medium text-sm mb-5 tracking-wider uppercase">Service</h4>
+            <ul className="space-y-3 text-sm font-sans font-light">
               <li>
-                <Link href="#" className="hover:text-amber-300 transition-colors">
-                  Shipping Info
+                <Link href="#" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Delivery Information
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-amber-300 transition-colors">
-                  Returns & Exchanges
+                <Link href="#" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Returns Policy
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-amber-300 transition-colors">
-                  FAQ
+                <Link href="#" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Frequently Asked
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-amber-300 transition-colors">
-                  Contact Us
+                <Link href="#" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Get in Touch
                 </Link>
               </li>
             </ul>
@@ -80,31 +79,31 @@ export default function Footer() {
 
           {/* About Us */}
           <div>
-            <h4 className="text-white font-semibold mb-4">About</h4>
-            <ul className="space-y-2 text-sm">
+            <h4 className="text-white font-sans font-medium text-sm mb-5 tracking-wider uppercase">Atelier</h4>
+            <ul className="space-y-3 text-sm font-sans font-light">
               <li>
-                <Link href="#" className="hover:text-amber-300 transition-colors">
-                  Our Story
+                <Link href="#" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Our Craftsmanship
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-amber-300 transition-colors">
-                  Sustainability
+                <Link href="#" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Sustainable Practices
                 </Link>
               </li>
               <li>
-                <Link href="#" className="hover:text-amber-300 transition-colors">
-                  Wholesale Inquiry
+                <Link href="#" className="hover:text-[var(--color-accent-light)] transition-colors duration-200">
+                  Trade Partnerships
                 </Link>
               </li>
             </ul>
           </div>
         </div>
 
-        <div className="border-t border-gray-800 mt-8 pt-8 text-sm text-center">
-          <p>© {currentYear} The Wooden Coasters. All rights reserved.</p>
-          <p className="mt-2">
-            Handcrafted wooden drink coasters | Custom engraved coasters | Wholesale available
+        <div className="border-t border-[var(--color-primary)] mt-12 pt-8 text-xs text-center font-sans font-light opacity-80">
+          <p className="tracking-wide">© {currentYear} The Wooden Coasters. All Rights Reserved.</p>
+          <p className="mt-3 tracking-wide">
+            Handcrafted Excellence • Bespoke Engraving • Trade Enquiries Welcome
           </p>
         </div>
       </div>
