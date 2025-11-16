@@ -43,3 +43,6 @@ next-env.d.ts
 # stock photos (downloaded by agents)
 # Remove this line if you want to commit the photos
 /public/images/stock-coasters/
+
+# pursuit agent reports
+/scripts/reports/
