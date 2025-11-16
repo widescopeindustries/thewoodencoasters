@@ -1,0 +1,45 @@
+{
+  "note": "Direct links to high-quality wooden coaster stock photos",
+  "instructions": "Visit these URLs to download photos manually, or use the agents on a machine with internet access",
+  "unsplash_searches": [
+    {
+      "query": "wooden coasters",
+      "url": "https://unsplash.com/s/photos/wooden-coasters",
+      "direct_download_examples": [
+        "https://unsplash.com/photos/brown-wooden-round-bowl-on-brown-wooden-table-pQMM63GE7fo",
+        "https://unsplash.com/photos/round-brown-wooden-board-QJvUa5pCHiQ",
+        "https://unsplash.com/photos/brown-round-cookies-on-white-surface-jk3kjRETC6Q"
+      ]
+    },
+    {
+      "query": "wood coaster drink",
+      "url": "https://unsplash.com/s/photos/wood-coaster-drink"
+    },
+    {
+      "query": "rustic coasters",
+      "url": "https://unsplash.com/s/photos/rustic-coasters"
+    }
+  ],
+  "pexels_searches": [
+    {
+      "query": "wooden coasters",
+      "url": "https://www.pexels.com/search/wooden%20coasters/"
+    },
+    {
+      "query": "wood drink coasters",
+      "url": "https://www.pexels.com/search/wood%20drink%20coasters/"
+    }
+  ],
+  "alternative_sources": [
+    {
+      "name": "Pixabay",
+      "url": "https://pixabay.com/images/search/wooden%20coasters/",
+      "license": "Free for commercial use, no attribution required"
+    },
+    {
+      "name": "Freepik",
+      "url": "https://www.freepik.com/search?format=search&query=wooden+coasters",
+      "license": "Free with attribution (or premium)"
+    }
+  ]
+}
