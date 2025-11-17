@@ -1,104 +1,98 @@
 'use client';
 
 import Link from 'next/link';
-import { ShoppingCart, Menu } from 'lucide-react';
-import { useCartStore } from '@/lib/store/cart';
+import { Wrench, Menu } from 'lucide-react';
 import { useState } from 'react';
 
 export default function Header() {
-  const totalItems = useCartStore((state) => state.getTotalItems());
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-[var(--color-neutral-200)] sticky top-0 z-50 shadow-sm">
+    <header className="bg-gray-900 border-b border-gray-800 sticky top-0 z-50 shadow-lg">
       <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link href="/" className="flex flex-col">
-            <span className="text-2xl font-serif font-medium text-[var(--color-primary-dark)] tracking-tight">
-              The Wooden Coasters
-            </span>
-            <span className="text-xs font-sans font-light text-[var(--color-neutral-800)] tracking-[0.15em] uppercase mt-0.5">
-              Handcrafted Excellence
-            </span>
+          <Link href="/" className="flex items-center gap-3">
+            <div className="p-2 bg-amber-600 rounded-lg">
+              <Wrench className="w-6 h-6 text-white" />
+            </div>
+            <div className="flex flex-col">
+              <span className="text-xl font-bold text-white">
+                AI Auto Mechanic
+              </span>
+              <span className="text-xs text-gray-400 tracking-wide">
+                Powered by Operation CHARM
+              </span>
+            </div>
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex items-center space-x-10">
+          <div className="hidden md:flex items-center space-x-8">
             <Link
               href="/"
-              className="text-sm font-sans font-medium text-[var(--color-neutral-800)] hover:text-[var(--color-primary)] transition-colors tracking-wide"
+              className="text-sm font-medium text-gray-300 hover:text-amber-400 transition-colors"
             >
               Home
             </Link>
             <Link
-              href="/products"
-              className="text-sm font-sans font-medium text-[var(--color-neutral-800)] hover:text-[var(--color-primary)] transition-colors tracking-wide"
+              href="/diagnosis"
+              className="text-sm font-medium text-gray-300 hover:text-amber-400 transition-colors"
             >
-              Collection
+              Start Diagnosis
             </Link>
             <Link
-              href="/products?filter=custom"
-              className="text-sm font-sans font-medium text-[var(--color-neutral-800)] hover:text-[var(--color-primary)] transition-colors tracking-wide"
+              href="https://charm.li"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-sm font-medium text-gray-300 hover:text-amber-400 transition-colors"
             >
-              Bespoke
-            </Link>
-            <Link
-              href="/products?filter=bulk"
-              className="text-sm font-sans font-medium text-[var(--color-neutral-800)] hover:text-[var(--color-primary)] transition-colors tracking-wide"
-            >
-              Trade
+              CHARM Database
             </Link>
           </div>
 
-          {/* Cart Button */}
+          {/* CTA Button */}
           <Link
-            href="/cart"
-            className="relative flex items-center justify-center w-11 h-11 rounded-sm bg-[var(--color-neutral-50)] hover:bg-[var(--color-neutral-100)] border border-[var(--color-neutral-200)] transition-all duration-200 hover:shadow-md"
+            href="/diagnosis"
+            className="hidden md:flex items-center gap-2 px-6 py-2.5 bg-amber-600 hover:bg-amber-700 text-white rounded-lg font-medium transition-colors"
           >
-            <ShoppingCart className="text-[var(--color-primary)]" size={20} strokeWidth={1.5} />
-            {totalItems > 0 && (
-              <span className="absolute -top-1.5 -right-1.5 bg-[var(--color-primary-dark)] text-white text-xs font-medium rounded-full w-5 h-5 flex items-center justify-center">
-                {totalItems}
-              </span>
-            )}
+            <Wrench className="w-4 h-4" />
+            Get Help
           </Link>
 
           {/* Mobile Menu Button */}
           <button
-            className="md:hidden text-[var(--color-primary)]"
+            className="md:hidden text-amber-400"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
-            <Menu size={24} strokeWidth={1.5} />
+            <Menu size={24} />
           </button>
         </div>
 
         {/* Mobile Menu */}
         {mobileMenuOpen && (
-          <div className="md:hidden py-4 space-y-2 border-t border-[var(--color-neutral-200)]">
+          <div className="md:hidden py-4 space-y-2 border-t border-gray-800">
             <Link
               href="/"
-              className="block py-2 text-sm font-medium text-[var(--color-neutral-800)] hover:text-[var(--color-primary)]"
+              className="block py-2 text-sm font-medium text-gray-300 hover:text-amber-400"
+              onClick={() => setMobileMenuOpen(false)}
             >
               Home
             </Link>
             <Link
-              href="/products"
-              className="block py-2 text-sm font-medium text-[var(--color-neutral-800)] hover:text-[var(--color-primary)]"
+              href="/diagnosis"
+              className="block py-2 text-sm font-medium text-gray-300 hover:text-amber-400"
+              onClick={() => setMobileMenuOpen(false)}
             >
-              Collection
+              Start Diagnosis
             </Link>
             <Link
-              href="/products?filter=custom"
-              className="block py-2 text-sm font-medium text-[var(--color-neutral-800)] hover:text-[var(--color-primary)]"
+              href="https://charm.li"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block py-2 text-sm font-medium text-gray-300 hover:text-amber-400"
+              onClick={() => setMobileMenuOpen(false)}
             >
-              Bespoke
-            </Link>
-            <Link
-              href="/products?filter=bulk"
-              className="block py-2 text-sm font-medium text-[var(--color-neutral-800)] hover:text-[var(--color-primary)]"
-            >
-              Trade
+              CHARM Database
             </Link>
           </div>
         )}

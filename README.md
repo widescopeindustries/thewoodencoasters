@@ -1,120 +1,170 @@
-# The Wooden Coasters - E-commerce Site
+# AI Auto Mechanic
 
-A modern e-commerce website for selling handcrafted wooden drink coasters, built with Next.js 15, TypeScript, and Tailwind CSS.
+An AI-powered automotive diagnostic assistant that democratizes mechanic knowledge by providing expert-level vehicle diagnosis help to everyone. Powered by Claude AI and backed by the Operation CHARM database of 50,000+ repair manuals.
 
 ## Features
 
-- **Product Catalog** - Browse wooden coasters by category (round, square, heart, custom)
-- **Advanced Filtering** - Filter by category, price, customization, and bulk availability
-- **Shopping Cart** - Persistent cart with Zustand state management
-- **SEO Optimized** - Built with Next.js App Router for optimal SEO performance
-- **Responsive Design** - Mobile-first design that works on all devices
-- **Custom Engraving** - Support for personalized wooden coasters
-- **Bulk Orders** - Wholesale pricing for restaurants, cafes, and events
+- **AI-Powered Diagnosis**: Interactive chat-based diagnosis flow using Claude AI
+- **Comprehensive Vehicle Coverage**: Support for vehicles from 1982-2013 across 40+ brands
+- **Operation CHARM Integration**: References to 50,000+ OEM repair manuals
+- **Intuitive Flow**: Step-by-step guided diagnosis process
+- **Expert Knowledge**: Professional-grade diagnostic methodology
+- **Safety First**: AI provides safety warnings and recommends professional help when needed
+- **Session Persistence**: Diagnosis sessions saved locally for later reference
 
-## Technology Stack
+## Tech Stack
 
-- **Framework**: Next.js 15 (App Router)
-- **Language**: TypeScript
-- **Styling**: Tailwind CSS
-- **State Management**: Zustand
+- **Frontend**: Next.js 16 with React 19
+- **Styling**: Tailwind CSS 4
+- **State Management**: Zustand with persistence
+- **AI**: Anthropic Claude API (Claude 3.5 Sonnet)
+- **TypeScript**: Full type safety throughout
 - **UI Components**: Headless UI, Lucide React icons
-- **SEO**: Built-in Next.js metadata and sitemap support
 
 ## Getting Started
 
+### Prerequisites
+
+- Node.js 20 or later
+- An Anthropic API key ([Get one here](https://console.anthropic.com/))
+
 ### Installation
 
+1. Clone the repository:
+```bash
+git clone <your-repo-url>
+cd thewoodencoasters
+```
+
+2. Install dependencies:
 ```bash
 npm install
 ```
 
-### Development Server
+3. Set up environment variables:
+```bash
+cp .env.example .env.local
+```
 
+4. Add your Anthropic API key to `.env.local`:
+```env
+ANTHROPIC_API_KEY=your_api_key_here
+```
+
+5. Run the development server:
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+6. Open [http://localhost:3000](http://localhost:3000) in your browser
 
-### Build for Production
+## Usage
 
-```bash
-npm run build
-npm start
-```
+### Starting a Diagnosis
+
+1. Navigate to the home page and click "Start Diagnosis"
+2. Select your vehicle (Year, Make, Model)
+3. Describe your symptoms in detail
+4. Engage with the AI assistant through interactive Q&A
+5. Receive diagnosis results and repair recommendations
+
+### How It Works
+
+The AI diagnostic assistant uses a systematic approach:
+
+1. **Information Gathering**: Asks clarifying questions about symptoms
+2. **System Identification**: Narrows down affected vehicle systems
+3. **Diagnostic Testing**: Guides through logical diagnostic steps
+4. **Solution Recommendation**: Provides repair procedures, parts needed, and difficulty estimates
+5. **Safety Considerations**: Warns about risks and when to seek professional help
 
 ## Project Structure
 
 ```
-thewoodencoasters.com/
 ├── app/
-│   ├── page.tsx           # Homepage
-│   ├── products/          # Product listing page with filters
-│   ├── cart/              # Shopping cart page
-│   ├── layout.tsx         # Root layout with header/footer
-│   └── sitemap.ts         # XML sitemap for SEO
+│   ├── api/
+│   │   ├── diagnosis/chat/     # AI chat endpoint
+│   │   └── vehicles/           # Vehicle data endpoints
+│   ├── diagnosis/              # Main diagnosis interface
+│   └── page.tsx                # Landing page
 ├── components/
-│   ├── Header.tsx         # Navigation header
-│   ├── Footer.tsx         # Site footer
-│   └── ProductCard.tsx    # Product display component
+│   ├── DiagnosisChat.tsx       # Chat interface
+│   ├── VehicleSelector.tsx     # Vehicle selection form
+│   ├── Header.tsx              # Navigation header
+│   └── Footer.tsx              # Footer component
 ├── lib/
-│   ├── types/             # TypeScript interfaces
-│   ├── data/              # Product data
-│   └── store/             # Zustand cart store
-└── public/                # Static assets
+│   ├── data/
+│   │   └── vehicles.ts         # Vehicle database
+│   ├── store/
+│   │   └── diagnosis.ts        # State management
+│   └── types/
+│       └── diagnosis.ts        # TypeScript types
+└── ARCHITECTURE.md             # Detailed architecture docs
 ```
 
-## SEO Strategy
+## API Endpoints
 
-The site is optimized for these high-value keywords:
+- `POST /api/diagnosis/chat` - Send message to AI and get response
+- `GET /api/vehicles/years` - Get available vehicle years
+- `GET /api/vehicles/makes` - Get available vehicle makes
+- `GET /api/vehicles/models?make=X` - Get models for a specific make
 
-- **Primary Keywords**:
-  - "wooden drink coasters" (2.2K searches/month)
-  - "wooden coasters" (1.9K searches/month)
+## Development
 
-- **Secondary Keywords**:
-  - "custom wooden coasters"
-  - "engraved wooden coasters"
-  - "round wooden coasters"
-  - "square wooden coasters"
-  - "bulk wooden coasters"
-  - "wholesale wooden coasters"
+### Running Pursuit Agents
 
-### SEO Features:
-- Semantic HTML structure
-- Optimized meta titles and descriptions
-- XML sitemap
-- robots.txt
-- Fast page load times with Next.js
-- Mobile responsive design
+This project includes quality monitoring agents:
 
-## Product Categories
+```bash
+npm run pursuit           # Run all pursuit agents
+npm run pursuit:quality   # Code quality guardian
+npm run pursuit:test      # Test enforcer
+npm run pursuit:perf      # Performance & accessibility checker
+```
 
-1. **Round Coasters** - Classic circular wooden coasters
-2. **Square Coasters** - Modern square designs
-3. **Heart Coasters** - Perfect for gifts and romantic occasions
-4. **Custom Engraved** - Personalized with laser engraving
+### Building for Production
 
-## Future Enhancements
+```bash
+npm run build
+npm run start
+```
 
-- [ ] Payment integration (Stripe/PayPal)
-- [ ] User authentication and accounts
-- [ ] Order history and tracking
-- [ ] Product reviews and ratings
-- [ ] Email notifications
-- [ ] Admin dashboard for product management
-- [ ] Real product images
-- [ ] Blog for content marketing
-- [ ] Customer testimonials
-- [ ] Live chat support
+## About Operation CHARM
 
-## Deploy on Vercel
+[Operation CHARM](https://charm.li) (Collection of High-quality Auto Repair Manuals) is a free database cataloging repair manuals for nearly all car brands from 1982 to 2013. It includes over 50,000 repair manuals covering 40+ brands including:
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme).
+- Domestic: Chevrolet, Ford, Dodge, GMC, Jeep, etc.
+- Asian: Toyota, Honda, Nissan, Mazda, Subaru, etc.
+- European: BMW, Audi, Mercedes-Benz, Volkswagen, Volvo, etc.
 
-Check out the [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This AI assistant references CHARM's extensive knowledge base to provide accurate, manufacturer-grade repair information.
+
+## Limitations & Disclaimers
+
+- **Knowledge Cutoff**: AI knowledge is current as of January 2025
+- **Vehicle Coverage**: CHARM database covers 1982-2013 vehicles primarily
+- **Not a Replacement**: This tool assists with diagnosis but doesn't replace professional mechanics
+- **Safety Critical**: Always consult a professional for safety-critical repairs
+- **No Warranty**: Diagnoses and recommendations are provided as-is without warranty
+
+## Contributing
+
+Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
 
-All rights reserved.
+This project is open source and available under the MIT License.
+
+## Support
+
+For issues, questions, or suggestions, please open an issue on GitHub.
+
+## Acknowledgments
+
+- **Anthropic** for the Claude AI API
+- **Operation CHARM** for democratizing access to repair manuals
+- The automotive DIY community for inspiration
+
+---
+
+**Built with passion to democratize automotive knowledge and empower DIY mechanics everywhere.**
